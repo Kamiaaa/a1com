@@ -238,7 +238,7 @@ const Footer = () => {
           
           {/* Copyright Assertions */}
           <div className="text-slate-500 text-sm text-center md:text-left order-3 md:order-1">
-            © {new Date().getFullYear()} A1 Communications. All rights reserved.
+            © {new Date().getFullYear()} A1 Communication. All rights reserved.
           </div>
 
           {/* Legal Document Pipelines */}
