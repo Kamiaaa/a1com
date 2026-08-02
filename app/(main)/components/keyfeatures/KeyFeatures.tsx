@@ -71,7 +71,7 @@ export default function KeyFeatures() {
         {/* header */}
         <div className="mx-auto max-w-2xl text-center">
           
-          <h2 className="mt-5 text-6xl font-source font-semibold tracking-tight text-white sm:text-7xl">
+          <h2 className="mt-5 text-5xl font-source font-semibold tracking-tight text-white sm:text-6xl">
             Internet that stays out of your way
           </h2>
           
