@@ -238,7 +238,7 @@ const Packages = () => {
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+            <h2 className="text-6xl sm:text-6xl font-source font-semibold text-white mb-4">
               Discover Our Best Packages
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto mb-6" />
