@@ -1,0 +1,22 @@
+/* Animation setup for Right-to-Left layout */
+@keyframes scrollNormal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Container track that holds the duplicated logos */
+.track {
+  display: flex;
+  width: max-content;
+  gap: 3rem; /* equivalent to Tailwind's gap-12 */
+  animation: scrollNormal 20s linear infinite;
+}
+
+/* Pauses the slider when a user hovers anywhere on it */
+.track:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,109 @@
+.carouselContainer {
+  height: calc(100vh - 4rem);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Base Slice Styles */
+.slice {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background-size: 400% 100%;
+  background-repeat: no-repeat;
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Slice Background Positioning */
+.slice0 { left: 0; background-position: 0% 0%; }
+.slice1 { left: 25%; background-position: 33.33% 0%; }
+.slice2 { left: 50%; background-position: 66.66% 0%; }
+.slice3 { left: 75%; background-position: 100% 0%; }
+
+.activeSlice {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+}
+
+.slice0:not(.activeSlice) { transform: translateY(-100%) translateX(-50%) scale(0.7) rotate(-10deg); }
+.slice1:not(.activeSlice) { transform: translateY(100%) translateX(-20%) scale(0.8) rotate(5deg); }
+.slice2:not(.activeSlice) { transform: translateY(-100%) translateX(20%) scale(0.8) rotate(-5deg); }
+.slice3:not(.activeSlice) { transform: translateY(100%) translateX(50%) scale(0.7) rotate(10deg); }
+
+
+/* =======================================================
+   FAST & ISOLATED MOVING SHADES (Continuous Cross Running)
+   ======================================================= */
+
+.shadesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: multiply;
+  overflow: hidden;
+}
+
+.colorShade {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30%; /* প্রতিটি শেডের নিজস্ব চওড়া সাইজ */
+  opacity: 0.6;
+  filter: blur(4px); /* গতিশীল লুক দেওয়ার জন্য সামান্য ব্লার */
+}
+
+/* -------------------------------------------------------
+   ডান থেকে বামে দ্রুত ছুটবে (Shade 0 এবং Shade 2)
+   ------------------------------------------------------- */
+.shade0 {
+  background: linear-gradient(90deg, rgba(101, 163, 13, 0) 0%, rgba(101, 163, 13, 0.6) 50%, rgba(21, 128, 61, 0) 100%);
+  animation: fastLeft 3.5s linear infinite;
+}
+
+.shade2 {
+  background: linear-gradient(90deg, rgba(20, 83, 45, 0) 0%, rgba(250, 212, 45, 0.5) 50%, rgba(20, 83, 45, 0) 100%);
+  animation: fastLeft 5s linear infinite;
+  animation-delay: 1.5s; /* বিচ্ছিন্নভাবে ছাড়ার জন্য ডিলে */
+}
+
+/* -------------------------------------------------------
+   বাম থেকে ডানে দ্রুত ছুটবে (Shade 1 এবং Shade 3)
+   ------------------------------------------------------- */
+.shade1 {
+  background: linear-gradient(90deg, rgba(21, 128, 61, 0) 0%, rgba(247, 3, 3, 0.5) 50%, rgba(20, 83, 45, 0) 100%);
+  animation: fastRight 4.5s linear infinite;
+}
+
+.shade3 {
+  background: linear-gradient(90deg, rgba(101, 163, 13, 0) 0%, rgba(21, 128, 61, 0.6) 50%, rgba(101, 163, 13, 0) 100%);
+  animation: fastRight 3.8s linear infinite;
+  animation-delay: 0.8s; /* বিচ্ছিন্নভাবে ছাড়ার জন্য ডিলে */
+}
+
+/* Keyframes: ডান থেকে বামে স্ক্রিন পার হয়ে চলে যাবে */
+@keyframes fastLeft {
+  0% {
+    transform: translateX(120vw) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(-40vw) skewX(-15deg);
+  }
+}
+
+/* Keyframes: বাম থেকে ডানে স্ক্রিন পার হয়ে চলে যাবে */
+@keyframes fastRight {
+  0% {
+    transform: translateX(-40vw) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(120vw) skewX(-15deg);
+  }
+}

@@ -1,0 +1,16 @@
+@theme {
+  /* Define custom keyframes */
+  --keyframes-fade-in-left: {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  };
+
+  /* Define the utility animation using the keyframes above */
+  --animate-fade-in-left: fade-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
