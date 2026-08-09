@@ -85,15 +85,15 @@ const ContactPage = () => {
     {
       icon: FaEnvelope,
       title: 'Email Us',
-      details: 'info@a1communications.com',
+      details: 'a1communicationbdisp@gmail.com',
       description: 'Send us an email anytime',
       color: 'from-red-600 to-red-800'
     },
     {
       icon: FaPhone,
       title: 'Call Us',
-      details: '09542366393, 01824382951-52',
-      description: 'Mon-Fri from 9am to 6pm',
+      details: "+8809644219999, 01824382951 (what's app), 01824382952",
+      description: 'Sat-Fri from 10am to 6pm',
       color: 'from-red-600 to-red-800'
     },
     {
@@ -188,7 +188,7 @@ const ContactPage = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </motion.h2>
                 <motion.p 
                   className="text-slate-300 mb-8"
@@ -196,7 +196,7 @@ const ContactPage = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Have a project in mind? We're here to help. Send us a message and we'll get back to you within 24 hours.
+                  Have a project in mind? We&apos;re here to help. Send us a message and we&apos;ll get back to you within 24 hours.
                 </motion.p>
 
                 {/* Contact Info Cards */}
@@ -269,7 +269,7 @@ const ContactPage = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <h2 className="text-2xl font-bold text-white mb-2">Send us a Message</h2>
-                  <p className="text-slate-300">Fill out the form below and we'll get back to you soon.</p>
+                  <p className="text-slate-300">Fill out the form below and we&apos;ll get back to you soon.</p>
                 </motion.div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
