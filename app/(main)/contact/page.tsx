@@ -19,7 +19,6 @@ import {
   FaChevronDown
 } from 'react-icons/fa';
 
-// Reusable Hero Section Component
 function HeroSection({ title, description }: { title: string; description: string }) {
   return (
     <div className="relative h-[38vh] min-h-[260px] w-full overflow-hidden">
@@ -104,7 +103,7 @@ export default function ContactPage() {
       id: 'hours',
       icon: FaClock,
       title: 'Working Hours',
-      primaryText: 'Sat - Thu: 9:00 AM - 6:00 PM',
+      primaryText: 'Sat - Fri: 10:00 AM - 6:00 PM',
       secondaryText: 'Friday: Closed',
       actionText: 'Check Status',
       actionUrl: null,
@@ -152,7 +151,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <HeroSection 
         title="Get In Touch"
-        description="Choose your preferred way to connect. Whether you prefer a quick phone call, WhatsApp chat, or in-person visit, we&apos;re ready to help."
+        description="Choose your preferred way to connect. Whether you prefer a quick phone call, WhatsApp chat, or in-person visit, we're ready to help."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -219,10 +218,11 @@ export default function ContactPage() {
           ))}
         </motion.div>
 
-        {/* Location & Map Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        {/* Location & FAQ Equal Height Grid Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-stretch">
+          {/* Visit Headquarters Box */}
           <motion.div 
-            className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between"
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between h-full"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -230,7 +230,7 @@ export default function ContactPage() {
           >
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/30 flex items-center justify-center text-red-500">
+                <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/30 flex items-center justify-center text-red-500 flex-shrink-0">
                   <FaMapMarkerAlt className="h-5 w-5" />
                 </div>
                 <div>
@@ -239,7 +239,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="space-y-3 my-6">
+              <div className="space-y-2 mb-6">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   <strong className="text-white">Address:</strong> Uttara, Dhaka - 1230, Bangladesh
                 </p>
@@ -249,24 +249,22 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Embedded Map Visual Container */}
-            <div className="relative w-full h-64 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+            {/* Embedded Map Visual Container with fixed aspect ratio */}
+            <div className="relative w-full h-64 md:h-72 rounded-xl overflow-hidden border border-slate-800 bg-slate-950 mt-auto">
               <iframe
                 title="Office Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4239851765036!2d90.3900!3d23.8750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3757c42f02d33455%3A0xd647a9b0c79791f!2sUttara%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'grayscale(0.8) contrast(1.2) opacity(0.85)' }}
+                className="w-full h-full border-0 grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute bottom-3 right-3">
+              <div className="absolute bottom-3 right-3 z-10">
                 <a
                   href="https://maps.google.com/?q=Uttara,+Dhaka+-+1230,+Bangladesh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 bg-slate-900/90 hover:bg-red-600 text-white text-xs font-medium rounded-lg backdrop-blur-md transition-colors flex items-center gap-1.5 border border-slate-700"
+                  className="px-3 py-1.5 bg-slate-900/90 hover:bg-red-600 text-white text-xs font-medium rounded-lg backdrop-blur-md transition-colors flex items-center gap-1.5 border border-slate-700 shadow-lg"
                 >
                   <FaDirections className="h-3.5 w-3.5" />
                   Get Directions
@@ -275,9 +273,9 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
-          {/* Quick FAQ Section */}
+          {/* FAQ Section Box */}
           <motion.div 
-            className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between"
+            className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between h-full"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -292,10 +290,10 @@ export default function ContactPage() {
                   <div key={idx} className="border border-slate-800 rounded-xl overflow-hidden bg-slate-950/50">
                     <button
                       onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                      className="w-full p-4 text-left font-medium text-sm text-slate-200 flex justify-between items-center hover:text-white transition-colors"
+                      className="w-full p-4 text-left font-medium text-sm text-slate-200 flex justify-between items-center hover:text-white transition-colors gap-3"
                     >
                       <span>{faq.question}</span>
-                      <FaChevronDown className={`h-3.5 w-3.5 text-slate-400 transition-transform duration-200 ${openFaq === idx ? 'rotate-180 text-red-500' : ''}`} />
+                      <FaChevronDown className={`h-3.5 w-3.5 text-slate-400 shrink-0 transition-transform duration-200 ${openFaq === idx ? 'rotate-180 text-red-500' : ''}`} />
                     </button>
                     {openFaq === idx && (
                       <div className="px-4 pb-4 text-xs text-slate-400 leading-relaxed border-t border-slate-800/60 pt-3">
@@ -307,15 +305,15 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Direct Connect Banner */}
-            <div className="mt-8 p-4 rounded-xl bg-gradient-to-r from-red-950/40 to-slate-900 border border-red-900/30 flex items-center justify-between">
+            {/* Direct Connect Banner pinned at bottom */}
+            <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-red-950/40 via-slate-900 to-slate-900 border border-red-900/30 flex items-center justify-between">
               <div>
                 <p className="text-xs font-semibold text-red-400">Need immediate help?</p>
-                <p className="text-xs text-slate-300">Call our helpline instantly</p>
+                <p className="text-xs text-slate-300">Call our hotline directly</p>
               </div>
               <a 
                 href="tel:+8809644219999" 
-                className="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors"
+                className="px-3.5 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors shadow-md"
               >
                 Call Hotline
               </a>
