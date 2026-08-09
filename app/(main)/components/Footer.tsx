@@ -73,10 +73,10 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '09542366393, 01824382951', link: 'tel:09542366393' },
+    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: "+8809644219999, 01824382951 (what's app), 01824382952", link: 'tel:09542366393' },
     { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'info@a1communications.com', link: 'mailto:info@a1communications.com' },
     { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: "Uttara, Dhaka -1230, Bangladesh.", link: null },
-    { icon: <Clock className="w-5 h-5" />, label: 'Business Hours', value: 'Sat - Thu: 9:00 AM - 6:00 PM', link: null },
+    { icon: <Clock className="w-5 h-5" />, label: 'Business Hours', value: 'Sat - Fri: 10:00 AM - 6:00 PM', link: null },
   ];
 
   const socialLinks = [
