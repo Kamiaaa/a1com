@@ -71,8 +71,8 @@ const Contact = () => {
     {
       icon: FaClock,
       title: 'Office Hours',
-      details: 'Saturday - Thursday',
-      description: '9:00 AM - 6:00 PM EST',
+      details: 'Saturday - Friday',
+      description: '10:00 AM - 6:00 PM BST',
       color: 'from-red-600 to-red-800'
     }
   ];
