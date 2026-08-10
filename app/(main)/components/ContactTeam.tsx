@@ -171,8 +171,8 @@ const ContactTeam: FC = () => {
             iconBgColor: "bg-green-950/40",
             iconColor: "text-green-400",
             label: "Text 'Hi' to",
-            value: "01799990566",
-            href: "sms:01799990566?body=Hi"
+            value: "+8801824382951",
+            href: "sms:+8801824382951?body=Hi"
         },
         {
             id: 2,
@@ -180,8 +180,8 @@ const ContactTeam: FC = () => {
             iconBgColor: "bg-blue-950/40",
             iconColor: "text-blue-400",
             label: "Call for VIVR",
-            value: "09642363694",
-            href: "tel:09642363694"
+            value: "+8809644219999",
+            href: "tel:+8809644219999"
         },
         {
             id: 3,
@@ -190,7 +190,7 @@ const ContactTeam: FC = () => {
             iconColor: "text-[#5390F7]",
             label: "Message us in",
             value: "Facebook",
-            href: "https://facebook.com"
+            href: "https://www.facebook.com/A1Communication.ISP.bd/"
         },
         {
             id: 4,
@@ -198,8 +198,8 @@ const ContactTeam: FC = () => {
             iconBgColor: "bg-red-950/40",
             iconColor: "text-red-400",
             label: "Email us",
-            value: "info@A1communications.com",
-            href: "mailto:support@carnival.com"
+            value: "a1communicationbdisp@gmail.com",
+            href: "mailto:a1communicationbdisp@gmail.com"
         },
         {
             id: 5,
@@ -207,8 +207,8 @@ const ContactTeam: FC = () => {
             iconBgColor: "bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#FCAF45]/20",
             iconColor: "text-[#F56094]",
             label: "Instagram Message",
-            value: "TeamCarnival",
-            href: "https://instagram.com"
+            value: "a1communicationbdisp",
+            href: "https://instagram.com/a1communicationbdisp"
         },
         {
             id: 6,
@@ -216,8 +216,8 @@ const ContactTeam: FC = () => {
             iconBgColor: "bg-purple-950/40",
             iconColor: "text-purple-400",
             label: "Hotline",
-            value: "09642363693",
-            href: "tel:09642363693"
+            value: "+8801824382951-52",
+            href: "tel:+8801824382951"
         }
     ];
 
