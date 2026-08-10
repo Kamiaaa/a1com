@@ -108,3 +108,70 @@ export async function GET() {
     );
   }
 }
+export async function PUT(request: NextRequest) {
+  try {
+    await dbConnect();
+    const { id, status } = await request.json();
+
+    if (!id || !status) {
+      return NextResponse.json(
+        { success: false, error: 'Subscription ID and status are required' },
+        { status: 400 }
+      );
+    }
+
+    const updatedSub = await Subscription.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true }
+    ).populate('selectedPackage', 'name speed price').lean();
+
+    if (!updatedSub) {
+      return NextResponse.json(
+        { success: false, error: 'Subscription request not found' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      data: {
+        ...updatedSub,
+        _id: updatedSub._id.toString(),
+      },
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message || 'Failed to update status' },
+      { status: 500 }
+    );
+  }
+}
+
+// DELETE - Delete a subscription request
+export async function DELETE(request: NextRequest) {
+  try {
+    await dbConnect();
+    const searchParams = request.nextUrl.searchParams;
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, error: 'Subscription ID is required' },
+        { status: 400 }
+      );
+    }
+
+    await Subscription.findByIdAndDelete(id);
+
+    return NextResponse.json({
+      success: true,
+      message: 'Subscription deleted successfully',
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message || 'Failed to delete subscription' },
+      { status: 500 }
+    );
+  }
+}
