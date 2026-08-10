@@ -9,7 +9,7 @@ import {
   FiUsers, 
   FiUserPlus, 
   FiBarChart2, 
-  FiSettings, 
+  FiMail, 
   FiLogOut 
 } from 'react-icons/fi';
 import { HiOutlineX } from 'react-icons/hi';
@@ -28,7 +28,7 @@ const navigation: NavItem[] = [
   { name: 'Add User', href: '/admin/create-user', icon: FiUserPlus, roles: ['admin'] },
   { name: 'Packages', href: '/admin/packages-crud', icon: LuPackage, roles: ['admin'] },
   { name: 'Add Package', href: '/admin/create-package', icon: LuPackagePlus, roles: ['admin'] },
-  { name: 'Settings', href: '/admin/settings', icon: FiSettings, roles: ['admin'] },
+  { name: 'Subscriptions', href: '/admin/subscriptions', icon: FiMail, roles: ['admin'] },
 ];
 
 interface SidebarProps {
