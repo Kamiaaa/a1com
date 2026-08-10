@@ -434,12 +434,12 @@ const PackagesManagement = () => {
                       Speed <SortIcon field="speed" />
                     </div>
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Features
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Popular
-                  </th>
+                  </th> */}
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
@@ -523,7 +523,7 @@ const PackagesManagement = () => {
                           {pkg.speed}
                         </span>
                       </td>
-                      <td className="px-6 py-4">
+                      {/* <td className="px-6 py-4">
                         <div className="flex flex-wrap gap-1">
                           {pkg.features.slice(0, 2).map((feature, idx) => (
                             <span key={idx} className="text-xs text-gray-600">
@@ -545,7 +545,7 @@ const PackagesManagement = () => {
                         ) : (
                           <span className="text-xs text-gray-400">-</span>
                         )}
-                      </td>
+                      </td> */}
                       <td className="px-6 py-4 whitespace-nowrap">
                         <button
                           onClick={() => handleToggleStatus(pkg)}
