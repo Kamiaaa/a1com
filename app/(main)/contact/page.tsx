@@ -80,7 +80,7 @@ const Contact = () => {
   const socialLinks = [
     { icon: FaLinkedin, href: '#', color: 'hover:text-red-400' },
     { icon: FaTwitter, href: '#', color: 'hover:text-red-300' },
-    { icon: FaFacebook, href: '#', color: 'hover:text-red-400' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/A1Communication.ISP.bd/', color: 'hover:text-red-400' },
     { icon: FaInstagram, href: '#', color: 'hover:text-red-400' }
   ];
 
