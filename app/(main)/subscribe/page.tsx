@@ -277,7 +277,7 @@ function SubscribeFormContent() {
                 type="submit"
                 disabled={loading}
                 className="w-full mt-4 py-3 px-6 rounded-xl font-bold text-white transition-all duration-200
-                  bg-gradient-to-r from-red-500 to-orange-500 hover:shadow-lg hover:shadow-red-500/20
+                  bg-linear-to-r from-red-500 to-red-700 hover:shadow-lg hover:shadow-red-500/20
                   transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-red-500
                   disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
@@ -305,17 +305,17 @@ function SubscribeFormContent() {
                 </div>
 
                 <div className="text-center font-extrabold text-2xl sm:text-3xl text-white leading-tight space-y-1">
-                  <p className="hover:text-red-400 transition-colors">16335</p>
-                  <p className="hover:text-red-400 transition-colors">09678-123123</p>
+                  <p className="hover:text-red-400 transition-colors">+8809644219999</p>
+                  <p className="hover:text-red-400 transition-colors">+8801824382951</p>
                 </div>
 
                 <div className="pt-2 flex flex-col items-center">
                   <MdEmail className="w-6 h-6 text-red-500 mb-2" />
                   <a
-                    href="mailto:info@link3.net"
+                    href="mailto:a1communicationbdisp@gmail.com"
                     className="font-semibold text-lg text-slate-300 hover:text-red-400 transition-colors underline underline-offset-4"
                   >
-                    info@link3.net
+                    a1communicationbdisp@gmail.com
                   </a>
                 </div>
               </div>
