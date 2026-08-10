@@ -58,7 +58,7 @@ const Contact = () => {
       icon: FaPhone,
       title: 'Call Us',
       details: "+8809644219999 (NOC), +8801824382951 (What's app)",
-      description: 'Saturday - Thursday from 9am to 6pm',
+      description: 'Saturday - Friday from 10am to 6pm',
       color: 'from-red-600 to-red-800'
     },
     {
