@@ -6,7 +6,7 @@ import Package from '@/models/Package';
 
 export const dynamic = 'force-dynamic';
 
-// POST - Form submit handle করার জন্য
+
 export async function POST(request: NextRequest) {
   try {
     await dbConnect();
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 2. Selected Package database-এ আছে কিনা তা নিশ্চিত করা
+    
     const packageExists = await Package.findById(selectedPackage);
     if (!packageExists) {
       return NextResponse.json(
