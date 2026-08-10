@@ -61,11 +61,11 @@ function HeroSection({ title, description }: { title: string; description: strin
           </div>
           <div className="flex items-center gap-2 text-xs sm:text-sm text-red-100/90 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full">
             <FaUsers className="w-3.5 h-3.5 text-red-200" />
-            <span>50K+ Active Users</span>
+            <span>5K+ Active Users</span>
           </div>
           <div className="flex items-center gap-2 text-xs sm:text-sm text-red-100/90 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-full">
             <FaMapMarkedAlt className="w-3.5 h-3.5 text-red-200" />
-            <span>15+ Years Experience</span>
+            <span>7+ Years Experience</span>
           </div>
         </div>
       </div>
@@ -142,9 +142,9 @@ const AboutPage = () => {
   ];
 
   const stats = [
-    { value: '50K+', label: 'Connected Homes', icon: FaUsers },
+    { value: '5K+', label: 'Connected Homes', icon: FaUsers },
     { value: '99.9%', label: 'Network Uptime', icon: FaGlobe },
-    { value: '15+', label: 'Years of Service', icon: FaCalendarAlt },
+    { value: '7+', label: 'Years of Service', icon: FaCalendarAlt },
     { value: '24/7', label: 'Technical Support', icon: FaHandsHelping },
   ];
 
@@ -175,7 +175,7 @@ const AboutPage = () => {
             <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-6" />
             <div className="space-y-4 text-base text-slate-300 leading-relaxed">
               <p>
-                Founded in 2025, <span className="font-semibold text-red-400">A1 Communication</span> was established with a singular vision: to make world-class, high-speed digital connectivity accessible, reliable, and seamless. Driven by a passion for technical excellence, we are committed to connecting households and corporations with cutting-edge internet framework solutions.
+                Founded in 19 October, 2019, <span className="font-semibold text-red-400">A1 Communication</span> was established with a singular vision: to make world-class, high-speed digital connectivity accessible, reliable, and seamless. Driven by a passion for technical excellence, we are committed to connecting households and corporations with cutting-edge internet framework solutions.
               </p>
               <p>
                 From dense corporate parks and dynamic workspaces to cozy remote-work apartments, we build modern network pathways that go far beyond standard broadband. Every node in our network infrastructure is thoughtfully engineered to deliver symmetrical speeds, unmatched packet stability, and limitless bandwidth.

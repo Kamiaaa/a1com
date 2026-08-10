@@ -194,11 +194,11 @@ const Navbar = () => {
 
             {/* CTA Button with updated PhoneCall icon */}
             <Link
-              href="tel:+8801824382951"
+              href="tel:+8801824382951-52"
               className="ml-4 px-5 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-red-500/30 flex items-center gap-2"
             >
               <PhoneCall className="w-4 h-4 animate-pulse" />
-              Hotline : +8801824382951
+              Hotline : +8801824382951-52
             </Link>
           </div>
 
@@ -323,12 +323,12 @@ const Navbar = () => {
           {/* Menu Footer with updated Hotline icon */}
           <div className="p-4 border-t border-slate-700">
             <Link
-              href="tel:+8801730068845"
+              href="tel:+8801824382951-52"
               className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <PhoneCall className="w-4 h-4" />
-              Hotline : +8801730068845
+              Hotline : +8801824382951-52
             </Link>
           </div>
         </div>
