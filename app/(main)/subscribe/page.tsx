@@ -165,7 +165,7 @@ function SubscribeFormContent() {
                     type="text"
                     name="name"
                     required
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full pl-9 pr-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
@@ -294,7 +294,7 @@ function SubscribeFormContent() {
 
             <div className="relative w-full max-w-md h-96 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 bg-slate-800/80 flex flex-col items-center justify-center p-6 text-white">
               <Image
-                src="/img/support-bg.jpg"
+                src="/img/subscribe.avif"
                 alt="Support Team"
                 fill
                 className="object-cover opacity-20"
