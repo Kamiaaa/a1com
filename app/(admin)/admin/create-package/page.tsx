@@ -314,7 +314,7 @@ export default function CreatePackagePage() {
                   <p className="text-green-100">Add a new internet package for customers</p>
                 </div>
                 <button
-                  onClick={() => router.push('/admin/packages')}
+                  onClick={() => router.push('/admin/packages-crud')}
                   className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors backdrop-blur-sm text-white"
                 >
                   <FiArrowLeft className="h-4 w-4" />
