@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { GiCheckMark, GiPayMoney } from 'react-icons/gi';
 import {
   MdDataUsage,
@@ -45,7 +46,7 @@ interface PricingTier {
   isActive: boolean;
 }
 
-const PricingCard: React.FC<{ tier: PricingTier }> = ({ tier }) => {
+const PricingCard: React.FC<{ tier: PricingTier; onSelect: (tier: PricingTier) => void }> = ({ tier, onSelect }) => {
   const iconComponent = iconMap[tier.icon] || <FiWifi className="h-7 w-7" />;
 
   return (
@@ -117,14 +118,17 @@ const PricingCard: React.FC<{ tier: PricingTier }> = ({ tier }) => {
         </div>
 
         {/* Button */}
-        <button className={`
-          w-full py-3 px-4 rounded-xl font-bold text-white transition-all duration-200
-          bg-gradient-to-r ${tier.color || 'from-red-500 to-orange-500'} hover:shadow-lg hover:shadow-red-500/20
-          transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-red-500
-          flex items-center justify-center gap-2 cursor-pointer
-        `}>
+        <button
+          onClick={() => onSelect(tier)}
+          className={`
+            w-full py-3 px-4 rounded-xl font-bold text-white transition-all duration-200
+            bg-gradient-to-r ${tier.color || 'from-red-500 to-orange-500'} hover:shadow-lg hover:shadow-red-500/20
+            transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-red-500
+            flex items-center justify-center gap-2 cursor-pointer
+          `}
+        >
           <MdOutlineRocketLaunch className="w-4 h-4" />
-          {tier.buttonText || 'Get Started'}
+          {tier.buttonText || 'Choose Plan'}
         </button>
 
         <p className="text-xs text-center text-slate-400 mt-4 flex items-center justify-center gap-1">
@@ -137,6 +141,7 @@ const PricingCard: React.FC<{ tier: PricingTier }> = ({ tier }) => {
 };
 
 const Packages = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [packages, setPackages] = useState<PricingTier[]>([]);
   const [loading, setLoading] = useState(true);
@@ -166,6 +171,11 @@ const Packages = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSelectPackage = (tier: PricingTier) => {
+    // Navigates to your connection request page with the chosen plan pre-selected
+    router.push(`/subscribe?plan=${encodeURIComponent(tier._id)}`);
   };
 
   const valueAdds = [
@@ -211,7 +221,7 @@ const Packages = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-      {/* Updated Hero Section Matching Contact Page */}
+      {/* Hero Section */}
       <div className="relative h-[40vh] min-h-65 w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
@@ -238,7 +248,7 @@ const Packages = () => {
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-6xl sm:text-6xl font-source font-semibold text-white mb-4">
+            <h2 className="text-4xl sm:text-5xl font-source font-semibold text-white mb-4">
               Discover Our Best Packages
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto mb-6" />
@@ -256,14 +266,14 @@ const Packages = () => {
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <PricingCard tier={tier} />
+                <PricingCard tier={tier} onSelect={handleSelectPackage} />
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Fully Slate-Theme Comparison Table Section */}
+      {/* Comparison Table Section */}
       {packages.length > 0 && (
         <div className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/50 border-t border-b border-slate-800">
           <div className="max-w-7xl mx-auto">
@@ -401,7 +411,10 @@ const Packages = () => {
               Join thousands of satisfied customers who trust us for their internet needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="relative overflow-hidden bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2 cursor-pointer">
+              <button 
+                onClick={() => router.push('/subscribe')}
+                className="relative overflow-hidden bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2 cursor-pointer"
+              >
                 <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -409,7 +422,10 @@ const Packages = () => {
                 <span className="absolute inset-0 bg-red-700 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0"></span>
               </button>
 
-              <button className="relative overflow-hidden bg-transparent border-2 border-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2 cursor-pointer">
+              <button 
+                onClick={() => router.push('/contact')}
+                className="relative overflow-hidden bg-transparent border-2 border-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2 cursor-pointer"
+              >
                 <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
