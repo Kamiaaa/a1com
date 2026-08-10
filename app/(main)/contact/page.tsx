@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import { 
@@ -11,34 +10,32 @@ import {
   FaTwitter, 
   FaFacebook,
   FaInstagram,
-  FaPaperPlane,
   FaClock
 } from 'react-icons/fa';
-import { FiUser, FiMail, FiPhone, FiMessageSquare } from 'react-icons/fi';
 
-// Reusable Hero Section Component matching shared application layout design
+// Hero Section Component matching shared application layout design
 function HeroSection({ title, description }: { title: string; description: string }) {
   return (
     <div className="relative h-[40vh] min-h-65 w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="img/page-back.png"
+          src="/img/page-back.png"
           alt="Hero background"
           fill
-          className="object-cover opacity-40"
+          className="object-cover"
           priority
         />
-        {/* Dark Overlay with Red brand tint matching previous styles */}
-        <div className="absolute inset-0 bg-linear-to-r from-slate-600 to-slate-500 mix-blend-multiply opacity-70" />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-source text-white mb-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bail text-white mb-4 tracking-tight">
           {title}
         </h1>
-        <p className="text-lg md:text-xl text-red-100 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
           {description}
         </p>
       </div>
@@ -46,77 +43,43 @@ function HeroSection({ title, description }: { title: string; description: strin
   );
 }
 
-const ContactPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      alert('Thank you for your message! We will get back to you soon.');
-      setLoading(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    }, 2000);
-  };
-
+const Contact = () => {
   const contactInfo = [
     {
       icon: FaEnvelope,
       title: 'Email Us',
-      details: 'info@a1communications.com',
+      details: 'info@raimatravel.com.bd',
       description: 'Send us an email anytime',
-      color: 'from-red-600 to-red-800'
+      color: 'from-slate-600 to-slate-800'
     },
     {
       icon: FaPhone,
       title: 'Call Us',
-      details: '09542366393, 01824382951-52',
-      description: 'Mon-Fri from 9am to 6pm',
-      color: 'from-red-600 to-red-800'
+      details: '+8801730068845, +880255045262',
+      description: 'Sun-Thurs from 10am to 6pm',
+      color: 'from-slate-600 to-slate-800'
     },
     {
       icon: FaMapMarkerAlt,
       title: 'Visit Us',
-      details: 'Uttara, Dhaka -1230',
+      details: 'Police Plaza Concord (7th Floor), Tower-2 Plot-2, Road-144, Gulshan-1, Dhaka-1212',
       description: 'Bangladesh',
-      color: 'from-red-600 to-red-800'
+      color: 'from-slate-600 to-slate-800'
     },
     {
       icon: FaClock,
       title: 'Office Hours',
-      details: 'Saturday - Thursday',
-      description: '9:00 AM - 6:00 PM EST',
-      color: 'from-red-600 to-red-800'
+      details: 'Sunday - Thursday',
+      description: '10:00 AM - 6:00 PM BST',
+      color: 'from-slate-600 to-slate-800'
     }
   ];
 
   const socialLinks = [
-    { icon: FaLinkedin, href: '#', color: 'hover:text-red-400' },
-    { icon: FaTwitter, href: '#', color: 'hover:text-red-300' },
-    { icon: FaFacebook, href: '#', color: 'hover:text-red-400' },
-    { icon: FaInstagram, href: '#', color: 'hover:text-red-400' }
+    { icon: FaLinkedin, href: '#', color: 'hover:text-slate-400' },
+    { icon: FaTwitter, href: '#', color: 'hover:text-slate-300' },
+    { icon: FaFacebook, href: '#', color: 'hover:text-slate-300' },
+    { icon: FaInstagram, href: '#', color: 'hover:text-slate-400' }
   ];
 
   // Animation variants with proper typing
@@ -140,18 +103,9 @@ const ContactPage = () => {
     }
   };
 
-  const formFieldVariants: Variants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
     <motion.div 
-      className="min-h-screen bg-slate-900"
+      className="min-h-screen bg-slate-900 text-white transition-colors duration-300"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -159,7 +113,7 @@ const ContactPage = () => {
       {/* Standardized Global Hero Section Placement */}
       <HeroSection 
         title="Get In Touch"
-        description="Ready to start your next project? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+        description="Ready to start your next project? We'd love to hear from you. Visit our office or reach out through any of the channels below."
       />
 
       {/* Main Content */}
@@ -171,15 +125,11 @@ const ContactPage = () => {
         viewport={{ once: true, margin: "-50px" }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <motion.div 
-              className="lg:col-span-1"
-              variants={itemVariants}
-            >
+            <motion.div variants={itemVariants}>
               <motion.div 
-                className="bg-slate-800 rounded-2xl shadow-2xl p-8 h-full"
+                className="bg-slate-800 rounded-2xl shadow-2xl p-8 h-full transition-colors duration-300"
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
               >
                 <motion.h2 
@@ -196,7 +146,7 @@ const ContactPage = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Have a project in mind? We're here to help. Send us a message and we'll get back to you within 24 hours.
+                  Have a project in mind? We're here to help. Reach out through any of the channels below or visit our office.
                 </motion.p>
 
                 {/* Contact Info Cards */}
@@ -238,7 +188,7 @@ const ContactPage = () => {
                       <motion.a
                         key={index}
                         href={social.href}
-                        className={`w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center text-slate-300 ${social.color} transition-colors duration-200`}
+                        className={`w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center text-slate-300 ${social.color} transition-all duration-300`}
                         whileHover={{ scale: 1.2, y: -3 }}
                         whileTap={{ scale: 0.9 }}
                         initial={{ opacity: 0, scale: 0 }}
@@ -253,197 +203,92 @@ const ContactPage = () => {
               </motion.div>
             </motion.div>
 
-            {/* Contact Form */}
-            <motion.div 
-              className="lg:col-span-2"
-              variants={itemVariants}
-            >
+            {/* Google Map */}
+            <motion.div variants={itemVariants}>
               <motion.div 
-                className="bg-slate-800 rounded-2xl shadow-2xl p-8"
+                className="bg-slate-800 rounded-2xl shadow-2xl p-8 transition-colors duration-300 h-full"
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
               >
                 <motion.div 
-                  className="mb-8"
+                  className="mb-6"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h2 className="text-2xl font-bold text-white mb-2">Send us a Message</h2>
-                  <p className="text-slate-300">Fill out the form below and we'll get back to you soon.</p>
+                  <h2 className="text-2xl font-bold text-white mb-2">Find Us Here</h2>
+                  <p className="text-slate-300">Visit our office at the following location</p>
                 </motion.div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <motion.div 
-                      className="relative"
-                      variants={formFieldVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: 0.3 }}
-                    >
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                        Full Name *
-                      </label>
-                      <div className="relative">
-                        <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your full name"
-                          className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-slate-700 text-white placeholder-slate-400 transition-shadow"
-                        />
-                      </div>
-                    </motion.div>
+                <motion.div 
+                  className="relative rounded-xl overflow-hidden shadow-lg border border-transparent"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  {/* Google Maps Embed */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.456789012345!2d90.41234567890123!3d23.7890123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76e12345678%3A0x9abcde1234567890!2sPolice%20Plaza%20Concord!5e0!3m2!1sen!2sbd!4v1234567890123!5m2!1sen!2sbd"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full"
+                    title="Office Location Map"
+                  />
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+                </motion.div>
 
-                    {/* Email */}
-                    <motion.div 
-                      className="relative"
-                      variants={formFieldVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: 0.4 }}
-                    >
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                        Email Address *
-                      </label>
-                      <div className="relative">
-                        <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your.email@example.com"
-                          className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-slate-700 text-white placeholder-slate-400 transition-shadow"
-                        />
-                      </div>
-                    </motion.div>
+                {/* Additional Location Info */}
+                <motion.div 
+                  className="mt-6 p-4 bg-slate-900/50 rounded-lg transition-colors duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <div className="flex items-start space-x-3">
+                    <FaMapMarkerAlt className="h-5 w-5 text-slate-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">Directions</h4>
+                      <p className="text-sm text-slate-300">
+                        Police Plaza Concord (7th Floor), Tower-2 Plot-2, Road-144, Gulshan-1, Dhaka-1212, Bangladesh
+                      </p>
+                      <a 
+                        href="https://maps.google.com/?q=Police+Plaza+Concord+Gulshan+Dhaka"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center mt-3 text-slate-400 hover:text-slate-300 text-sm font-medium transition-colors"
+                      >
+                        Get Directions
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
+                </motion.div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Phone */}
-                    <motion.div 
-                      className="relative"
-                      variants={formFieldVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: 0.5 }}
-                    >
-                      <label htmlFor="phone" className="block text-sm font-medium text-slate-300 mb-2">
-                        Phone Number
-                      </label>
-                      <div className="relative">
-                        <FiPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="Your phone number"
-                          className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-slate-700 text-white placeholder-slate-400 transition-shadow"
-                        />
-                      </div>
-                    </motion.div>
-
-                    {/* Subject */}
-                    <motion.div 
-                      className="relative"
-                      variants={formFieldVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: 0.6 }}
-                    >
-                      <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
-                        Subject *
-                      </label>
-                      <div className="relative">
-                        <FiMessageSquare className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-                        <select
-                          id="subject"
-                          name="subject"
-                          required
-                          value={formData.subject}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 border border-slate-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-slate-700 text-white appearance-none transition-shadow"
-                        >
-                          <option value="" className="text-slate-400">Select a subject</option>
-                          <option value="general" className="text-white">General Inquiry</option>
-                          <option value="project" className="text-white">Project Discussion</option>
-                          <option value="partnership" className="text-white">Partnership</option>
-                          <option value="support" className="text-white">Technical Support</option>
-                          <option value="other" className="text-white">Other</option>
-                        </select>
-                      </div>
-                    </motion.div>
+                {/* Parking & Transport Info */}
+                <motion.div 
+                  className="mt-4 grid grid-cols-2 gap-3"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <div className="text-center p-3 bg-slate-700/50 rounded-lg transition-colors duration-300">
+                    <div className="text-slate-300 font-semibold text-sm mb-1">Parking</div>
+                    <div className="text-xs text-slate-400">Ample parking available</div>
                   </div>
-
-                  {/* Message */}
-                  <motion.div 
-                    className="relative"
-                    variants={formFieldVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.7 }}
-                  >
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                      Your Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your project or inquiry..."
-                      className="w-full px-4 py-3 border border-slate-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-slate-700 text-white placeholder-slate-400 resize-none transition-shadow"
-                    />
-                  </motion.div>
-
-                  {/* Submit Button */}
-                  <motion.button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white py-4 px-6 rounded-lg font-semibold hover:from-red-500 hover:to-red-600 focus:ring-4 focus:ring-red-950 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-200 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9, duration: 0.5 }}
-                  >
-                    {loading ? (
-                      <>
-                        <motion.div 
-                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        />
-                        <span>Sending Message...</span>
-                      </>
-                    ) : (
-                      <>
-                        <motion.div
-                          whileHover={{ x: 3 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                        >
-                          <FaPaperPlane className="h-5 w-5" />
-                        </motion.div>
-                        <span>Send Message</span>
-                      </>
-                    )}
-                  </motion.button>
-                </form>
+                  <div className="text-center p-3 bg-slate-700/50 rounded-lg transition-colors duration-300">
+                    <div className="text-slate-300 font-semibold text-sm mb-1">Public Transport</div>
+                    <div className="text-xs text-slate-400">Metro & bus nearby</div>
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
-
           </div>
         </div>
       </motion.div>
@@ -451,4 +296,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Contact;
