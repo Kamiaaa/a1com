@@ -10,7 +10,8 @@ import {
   FaTwitter, 
   FaFacebook,
   FaInstagram,
-  FaClock
+  FaClock,
+  FaDirections
 } from 'react-icons/fa';
 
 // Reusable Hero Section Component matching shared application layout design
@@ -114,7 +115,7 @@ const Contact = () => {
       {/* Hero Section */}
       <HeroSection 
         title="Get In Touch"
-        description="We'd love to hear from you. Reach out to us through any of the channels below and we'll get back to you as soon as possible."
+        description="We'd love to hear from you. Reach out to us through any of the channels below or visit our office location."
       />
 
       {/* Main Content */}
@@ -147,6 +148,42 @@ const Contact = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Google Maps Section */}
+        <motion.div 
+          variants={itemVariants}
+          className="bg-slate-800 rounded-2xl shadow-xl overflow-hidden mb-12"
+        >
+          <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-700">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-1">Our Location</h3>
+              <p className="text-slate-300">Uttara, Dhaka - 1230, Bangladesh</p>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Uttara,Dhaka,Bangladesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white font-semibold px-5 py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-red-900/30"
+            >
+              <FaDirections className="h-5 w-5" />
+              <span>Get Directions</span>
+            </a>
+          </div>
+
+          <div className="w-full h-96 relative bg-slate-700">
+            <iframe
+              title="Google Map Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4023249018446!2d90.3800!3d23.8748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3757c42738b5d3a5%3A0xb249f3e498c4d28d!2sUttara%2C%20Dhaka%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(90%)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+          </div>
+        </motion.div>
 
         {/* Social Media Links Banner */}
         <motion.div 
