@@ -38,15 +38,15 @@ const PromotionalBanner = () => {
                 <div className="flex flex-col sm:flex-row gap-4 z-10">
                     {/* View Our Plan Button */}
                     <Link href={'/packages'}>
-                    <button
-                        onClick={handleDonateClick}
-                        className="relative overflow-hidden bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2"
-                        aria-label="Donate Now"
-                    >
-                        <MdOutlinePhoneForwarded className="text-xl relative z-10" />
-                        <span className="relative z-10">View Our Plan</span>
-                        <span className="absolute inset-0 bg-red-700 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0"></span>
-                    </button>
+                        <button
+                            onClick={handleDonateClick}
+                            className="relative overflow-hidden bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2"
+                            aria-label="Donate Now"
+                        >
+                            <MdOutlinePhoneForwarded className="text-xl relative z-10" />
+                            <span className="relative z-10">View Our Plan</span>
+                            <span className="absolute inset-0 bg-red-700 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0"></span>
+                        </button>
                     </Link>
                     {/* Contact Sales Button */}
                     <Link href={'/contact'}>
