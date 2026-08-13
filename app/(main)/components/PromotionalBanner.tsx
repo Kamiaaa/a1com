@@ -9,7 +9,7 @@ const PromotionalBanner = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const handleDonateClick = () => {
+    const handlePackagesClick = () => {
         // Add your donation page URL or payment integration here
         window.location.href = '/donate';
         // Or if using Next.js router:
@@ -39,9 +39,9 @@ const PromotionalBanner = () => {
                     {/* View Our Plan Button */}
                     <Link href={'/packages'}>
                         <button
-                            onClick={handleDonateClick}
+                            onClick={handlePackagesClick}
                             className="relative overflow-hidden bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg group flex items-center justify-center gap-2"
-                            aria-label="Donate Now"
+                            aria-label="View Our Plan"
                         >
                             <MdOutlinePhoneForwarded className="text-xl relative z-10" />
                             <span className="relative z-10">View Our Plan</span>
