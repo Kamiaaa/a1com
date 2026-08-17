@@ -20,7 +20,7 @@ export default function SocialSidebar() {
   const socials: SocialLink[] = [
     {
       name: "Facebook",
-      url: "https://facebook.com",
+      url: "https://www.facebook.com/A1Communication.ISP.bd",
       icon: <FaFacebookF className="text-xl" />,
       colorClass: "bg-[#1877F2]", // Official Facebook Blue
     },
