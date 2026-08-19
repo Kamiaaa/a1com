@@ -32,7 +32,9 @@ const faqData: FAQItem[] = [
   {
     id: '4',
     question: 'How can I pay my bill online?',
-    answer: `You can pay your internet bill through our official B-kash merchant account number 01682270100. We offer bank account numbers through which you can deposit money.`,
+    answer: `You can pay your internet bill through our official B-kash merchant account number 01682270100. You can pay internet bill through BRAC Bank account 
+A1 Communication ISP 
+2057035600001.`,
     category: 'billing'
   },
   {
