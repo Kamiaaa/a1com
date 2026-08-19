@@ -32,9 +32,7 @@ const faqData: FAQItem[] = [
   {
     id: '4',
     question: 'How can I pay my bill online?',
-    answer: `You can pay your internet bill through our official B-kash merchant account number 01682270100. You can pay internet bill through BRAC Bank account 
-A1 Communication ISP 
-2057035600001.`,
+    answer: 'You can pay your internet bill through our official B-kash merchant account number 01682270100. You can pay internet bill through BRAC Bank account A1 Communication ISP 2057035600001.',
     category: 'billing'
   },
   {
@@ -46,7 +44,7 @@ A1 Communication ISP
   {
     id: '6',
     question: 'Do you provide Wi-Fi routers?',
-    answer: 'Yes, we provide a free high-performance Wi-Fi 6 router with all plans. The router includes enhanced security features, guest network capability, and parental controls. Professional installation is available for $49.99.',
+    answer: 'No, we do not provide a router but we provide advice about router quality so that you can purchase easily and confidently. The router includes enhanced security features, guest network capability and parental controls. Professional installation is totally free. Thank you.',
     category: 'technical'
   },
   {
