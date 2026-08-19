@@ -32,13 +32,13 @@ const faqData: FAQItem[] = [
   {
     id: '4',
     question: 'How can I pay my bill online?',
-    answer: 'You can pay your bill through our customer portal, mobile app, or by setting up automatic payments. We accept credit cards, debit cards, PayPal, and bank transfers. Late payments may incur a $5 fee after the 10-day grace period.',
+    answer: `You can pay your internet bill through our official B-kash merchant account number 01682270100. We offer bank account numbers through which you can deposit money.`,
     category: 'billing'
   },
   {
     id: '5',
     question: 'What is your refund policy?',
-    answer: 'We offer a 30-day money-back guarantee for all new customers. If you\'re unsatisfied with our service, you can cancel within 30 days of activation for a full refund. Equipment must be returned in good condition.',
+    answer: "No refund policy is available. If you're unsatisfied with our service, you can communicate with us regarding our hotline number. Equipment must be returned if you're to be off-line.",
     category: 'billing'
   },
   {
@@ -50,7 +50,7 @@ const faqData: FAQItem[] = [
   {
     id: '7',
     question: 'What are your customer support hours?',
-    answer: 'Our technical support is available 24/7/365 via phone and live chat. Billing inquiries can be handled Monday-Friday 8 AM-8 PM EST. Emergency outage support is available around the clock.',
+    answer: 'Our technical support is available 24/7/365 via phone and live chat. Billing inquiries can be handled Monday-Friday 10 AM-7 PM BST. Emergency outage support is available around the clock.',
     category: 'support'
   },
   {

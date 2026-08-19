@@ -142,7 +142,7 @@ const AboutPage = () => {
   ];
 
   const stats = [
-    { value: '5K+', label: 'Connected Homes', icon: FaUsers },
+    { value: '1K+', label: 'Connected Homes', icon: FaUsers },
     { value: '99.9%', label: 'Network Uptime', icon: FaGlobe },
     { value: '7+', label: 'Years of Service', icon: FaCalendarAlt },
     { value: '24/7', label: 'Technical Support', icon: FaHandsHelping },
