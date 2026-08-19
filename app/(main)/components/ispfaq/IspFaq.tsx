@@ -52,7 +52,7 @@ A1 Communication ISP
   {
     id: '7',
     question: 'What are your customer support hours?',
-    answer: 'Our technical support is available 24/7/365 via phone and live chat. Billing inquiries can be handled Monday-Friday 10 AM-7 PM BST. Emergency outage support is available around the clock.',
+    answer: 'Our technical support is available 24/7/365 via phone and Ip phone number. Billing inquiries can be handled Saturday- Friday 10 AM-7 PM.',
     category: 'support'
   },
   {
