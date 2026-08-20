@@ -20,7 +20,7 @@ const faqData: FAQItem[] = [
   {
     id: '2',
     question: 'How do I check if your service is available at my address?',
-    answer: 'You can check availability by visiting our website and entering your address in the coverage checker, or by calling our customer service at 1-800-ISP-HELP. Our coverage map shows real-time availability in your area.',
+    answer: 'By calling our Customer service at +8809644219999 and 01824382951-52',
     category: 'general'
   },
   {
