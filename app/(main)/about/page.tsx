@@ -46,7 +46,7 @@ function HeroSection({ title, description }: { title: string; description: strin
           Your Connection, Our Passion
         </div>
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-source text-white mb-4 tracking-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-source text-red-500 mb-4 tracking-tight">
           {title}
         </h1>
         <p className="text-base md:text-lg text-red-50/90 max-w-2xl mx-auto font-light">
