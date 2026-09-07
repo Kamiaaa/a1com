@@ -34,7 +34,7 @@ function HeroSection({ title, description }: { title: string; description: strin
           priority
         />
         {/* Deep Overlay containing brand theme matching original blend */}
-        <div className="absolute inset-0 bg-linear-to-r from-red-600/90 to-red-500/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-linear-to-r from-blue-600/90 to-blue-500/80 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
@@ -172,7 +172,7 @@ const AboutPage = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               Our Story
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mb-6" />
+            <div className="w-16 h-1 bg-linear-to-r from-red-500 to-red-600 rounded-full mb-6" />
             <div className="space-y-4 text-base text-slate-300 leading-relaxed">
               <p>
                 Founded in 19 October, 2019, <span className="font-semibold text-red-400">A1 Communication</span> was established with a singular vision: to make world-class, high-speed digital connectivity accessible, reliable, and seamless. Driven by a passion for technical excellence, we are committed to connecting households and corporations with cutting-edge internet framework solutions.
