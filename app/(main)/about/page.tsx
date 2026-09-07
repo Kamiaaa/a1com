@@ -34,7 +34,7 @@ function HeroSection({ title, description }: { title: string; description: strin
           priority
         />
         {/* Deep Overlay containing brand theme matching original blend */}
-        <div className="absolute inset-0 bg-linear-to-r from-blue-600/90 to-blue-500/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-linear-to-r from-black-600/90 to-black-500/80 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
