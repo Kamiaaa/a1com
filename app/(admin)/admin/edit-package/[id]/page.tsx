@@ -320,7 +320,7 @@ const EditPackagePage = () => {
       setSuccess(true);
       
       setTimeout(() => {
-        router.push('/admin/packages');
+        router.push('/admin/packages-crud');
       }, 2000);
       
     } catch (err) {
