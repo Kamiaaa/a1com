@@ -24,7 +24,7 @@ export default function AffordablePrice() {
             Tk
           </span>
           <span className="text-5xl md:text-6xl font-black text-[#f16e10] tracking-tight">
-            500
+            600
           </span>
           <span className="text-xs md:text-sm font-semibold text-slate-500 ml-1">
             Monthly
@@ -61,9 +61,9 @@ export default function AffordablePrice() {
           />
         </div>
 
-        {/* Floating Orange Badge: 10 Mbps */}
+        {/* Floating Orange Badge: 30 Mbps */}
         <div className="absolute top-[15%] left-[-5%] md:left-[5%] w-32 h-32 md:w-44 md:h-44 bg-[#f16e10] rounded-full flex flex-col items-center justify-center text-white shadow-2xl border-4 border-slate-900 transform hover:scale-105 transition-transform duration-300">
-          <span className="text-3xl md:text-5xl font-black leading-none">10</span>
+          <span className="text-3xl md:text-5xl font-black leading-none">30</span>
           <span className="text-xl md:text-3xl font-extrabold tracking-tight leading-none mt-1">Mbps</span>
           <span className="text-[9px] md:text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Per Month</span>
         </div>
